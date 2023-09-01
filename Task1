@@ -1,0 +1,33 @@
+#include<iostream>
+#include<random>
+using namespace std;
+int main()
+{
+    random_device r;
+    uniform_int_distribution <int> dist(1,100);
+    int rd=dist(r);
+    cout<<"\nWelcome to Number Guess Game\n";
+    cout<<"Guess the Number:";
+    int x;
+    while(x!=rd)
+    {
+        cin>>x;
+        if(x>rd)
+        {
+            cout<<"Oops your Number is Greater!!";
+            cout<<"\nTry Again!!";
+            cout<<"\nGuess the Smaller Number:";
+        }
+        else if(x<rd)
+        {
+            cout<<"Oops your Number is Smaller!!";
+            cout<<"\nTry Again!!";
+            cout<<"\nGuess the Greater Number:";
+        }
+        else
+        {
+            cout<<"\nHurray You Got the Number!!";
+        }
+    }
+    return 0;
+}
